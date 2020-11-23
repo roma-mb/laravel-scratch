@@ -16,6 +16,15 @@ class Customer extends Model
 //  this is the opposite fillable
     protected  $guarded = [];
 
+//    Access mutators  https://laravel.com/docs/8.x/eloquent-mutators
+    public function getActiveAttribute($value)
+    {
+          return [
+              0 =>'Inactive',
+              1 => 'Active'
+          ][$value];
+    }
+
     public function scopeActive(Builder $query)
     {
         return $query->where('active', 1);

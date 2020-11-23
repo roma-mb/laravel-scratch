@@ -10,11 +10,14 @@ class CustomersController extends Controller
 {
     public function index()
     {
-        $activeCustomers   = Customer::active()->get();
-        $inactiveCustomers = Customer::inactive()->get();
+//        https://laravel.com/docs/5.0/eloquent#query-scopes
+//        $activeCustomers   = Customer::active()->get();
+//        $inactiveCustomers = Customer::inactive()->get();
+
+        $customers = Customer::all();
 
 //        return view('internals.customer', ['customer' => $customer]);
-        return view('customers.index', compact('activeCustomers', 'inactiveCustomers'));
+        return view('customers.index', compact('customers'));
     }
 
     public function create()
@@ -39,5 +42,10 @@ class CustomersController extends Controller
 //        return back();
 
         return redirect('/customers');
+    }
+
+    public function show(Customer $customer)
+    {
+        return view('customers.show', compact('customer'));
     }
 }
