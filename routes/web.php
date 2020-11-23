@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::view('about', 'about');
 Route::view('contact', 'contact');
-Route::get('customers', [CustomersController::class, 'list']);
+Route::get('customers', [CustomersController::class, 'index']);
+Route::get('customers/create', [CustomersController::class, 'create']);
 Route::post('customers', [CustomersController::class, 'store']);
