@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="" />
+    <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="Created email, markdown, Contact form controller">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactFormController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/ContactFormMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customers/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customers/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/contact/contact-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,6 +171,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\Contact" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\customers" />
     </key>
@@ -182,7 +198,12 @@
       <workItem from="1606074019144" duration="6948000" />
       <workItem from="1606082798609" duration="186000" />
       <workItem from="1606083079816" duration="110000" />
-      <workItem from="1606083212851" duration="11740000" />
+      <workItem from="1606083212851" duration="12052000" />
+      <workItem from="1606146474117" duration="4256000" />
+      <workItem from="1606188506351" duration="85000" />
+      <workItem from="1606705505662" duration="1474000" />
+      <workItem from="1606878130108" duration="4557000" />
+      <workItem from="1607276312317" duration="7767000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, company and customer, and persist in db.">
       <created>1606091138152</created>
@@ -198,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606102858991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Unversioned files">
+      <created>1606103186122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606103186122</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,37 +235,48 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create models, company and customer, and persist in db." />
     <MESSAGE value="Model binding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model binding" />
+    <MESSAGE value="Unversioned files" />
+    <MESSAGE value="Created email, markdown" />
+    <MESSAGE value="Created email, markdown, Contact form controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created email, markdown, Contact form controller" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1416" y="90" key="CommitChangelistDialog2" timestamp="1606102857560">
+    <state x="-1416" y="90" key="CommitChangelistDialog2" timestamp="1607293311932">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1416" y="90" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606102857560" />
-    <state x="-1133" y="443" key="NewPhpFileDialog" timestamp="1606089453768">
+    <state x="-1416" y="90" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607293311932" />
+    <state x="-1512" y="201" key="DiffContextDialog" timestamp="1607293263536">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1133" y="443" key="NewPhpFileDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606089453768" />
+    <state x="-1512" y="201" key="DiffContextDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607293263536" />
+    <state x="-1133" y="443" key="NewPhpFileDialog" timestamp="1606146579377">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1133" y="443" key="NewPhpFileDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606146579377" />
     <state x="-1422" y="166" key="SettingsEditor" timestamp="1606100880440">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1422" y="166" key="SettingsEditor/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606100880440" />
-    <state x="-1356" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606091938090">
+    <state x="-1356" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607288739166">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1356" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606091938090" />
+    <state x="-1356" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607288739166" />
     <state x="-1152" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606083279943">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1152" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606083279943" />
+    <state x="-1274" y="130" width="628" height="780" key="find.popup" timestamp="1607289579298">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1274" y="130" width="628" height="780" key="find.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607289579298" />
     <state x="-1319" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1606074105879">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1319" y="246" width="700" height="530" key="recent.locations.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606074105879" />
-    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1606101724469">
+    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1607288712515">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606101724469" />
+    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607288712514" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@0.0.1366.728" timestamp="1605843353610" />
   </component>
 </project>

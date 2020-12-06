@@ -16,13 +16,15 @@ class Customer extends Model
 //  this is the opposite fillable
     protected  $guarded = [];
 
+//    Set a default value in atribute
+    protected $attributes = [
+        'active' => 1
+    ];
+
 //    Access mutators  https://laravel.com/docs/8.x/eloquent-mutators
     public function getActiveAttribute($value)
     {
-          return [
-              0 =>'Inactive',
-              1 => 'Active'
-          ][$value];
+        return $this->activeOptions()[$value];
     }
 
     public function scopeActive(Builder $query)
@@ -38,5 +40,13 @@ class Customer extends Model
     public function company()
     {
       return $this->belongsTo(Company::class);
+    }
+
+    public function activeOptions()
+    {
+        return [
+            1 => 'Active',
+            0 => 'Inactive'
+        ];
     }
 }
