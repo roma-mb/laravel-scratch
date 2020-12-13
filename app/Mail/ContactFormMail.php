@@ -35,6 +35,7 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
+//        public var $this->validate was sent to the blade
         return $this->markdown('emails.contact.contact-form');
     }
 }

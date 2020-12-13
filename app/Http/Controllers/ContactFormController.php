@@ -23,6 +23,12 @@ class ContactFormController extends Controller
 
         Mail::to($validate['email'])->send(new ContactFormMail($validate));
 
-        return redirect('/contact');
+//        another way
+//        session()->flash('message', 'Thank you for your messge. We\'ll be in touch');
+//        return redirect('/contact');
+
+//        send a message in session "with()";
+        return redirect('/contact')
+            ->with('message', 'Thank you for your messge. We\'ll be in touch');
     }
 }
