@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home')->name('home');
+Route::get('/login', [AuthController::class, 'index']);
+Route::post('/sign-in', [AuthController::class, 'signIn']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'create']);
+
 
 Route::get('contact', [ContactFormController::class, 'create']);
 Route::post('contact', [ContactFormController::class, 'store']);

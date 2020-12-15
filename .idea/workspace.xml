@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="Change contact layout">
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactFormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ContactFormMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ContactFormMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/contact/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +158,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/customers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -166,11 +172,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\auth" />
+      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\app\Http\Controllers\Auth" />
+      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\customers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\Contact" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\customers" />
     </key>
   </component>
   <component name="RunManager">
@@ -200,6 +208,9 @@
       <workItem from="1606878130108" duration="4557000" />
       <workItem from="1607276312317" duration="9480000" />
       <workItem from="1607881553944" duration="4551000" />
+      <workItem from="1607970961577" duration="12156000" />
+      <workItem from="1607992899371" duration="504000" />
+      <workItem from="1607995841187" duration="750000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, company and customer, and persist in db.">
       <created>1606091138152</created>
@@ -245,22 +256,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Change contact layout" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2" timestamp="1607887670056">
+    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2" timestamp="1607908208431">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607887670056" />
-    <state x="-1512" y="201" key="DiffContextDialog" timestamp="1607887575001">
+    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607908208431" />
+    <state x="-1512" y="201" key="DiffContextDialog" timestamp="1607905292588">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1512" y="201" key="DiffContextDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607887575001" />
-    <state x="-1133" y="443" key="NewPhpFileDialog" timestamp="1606146579377">
+    <state x="-1512" y="201" key="DiffContextDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607905292588" />
+    <state x="-1180" y="274" key="FileChooserDialogImpl" timestamp="1607890708544">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1133" y="443" key="NewPhpFileDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606146579377" />
-    <state x="-1431" y="256" key="RollbackChangesDialog" timestamp="1607887596984">
+    <state x="-1180" y="274" key="FileChooserDialogImpl/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607890708544" />
+    <state x="-1133" y="443" key="NewPhpFileDialog" timestamp="1607891189736">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1431" y="256" key="RollbackChangesDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607887596984" />
+    <state x="-1133" y="443" key="NewPhpFileDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607891189736" />
+    <state x="-1431" y="256" key="RollbackChangesDialog" timestamp="1607888764874">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1431" y="256" key="RollbackChangesDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607888764874" />
     <state x="-1422" y="166" key="SettingsEditor" timestamp="1606100880440">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -273,18 +288,22 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1152" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606083279943" />
-    <state x="-1274" y="130" width="628" height="780" key="find.popup" timestamp="1607882929609">
+    <state x="-1274" y="130" width="628" height="780" key="find.popup" timestamp="1607902936029">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1274" y="130" width="628" height="780" key="find.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607882929609" />
+    <state x="-1274" y="130" width="628" height="780" key="find.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607902936029" />
     <state x="-1319" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1606074105879">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1319" y="246" width="700" height="530" key="recent.locations.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606074105879" />
-    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1607882009175">
+    <state x="-1304" y="240" key="run.anything.popup" timestamp="1607980156380">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607882009175" />
+    <state x="-1304" y="240" key="run.anything.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607980156380" />
+    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1607985644814">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1434" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607985644814" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-1920.0.1920.1040@0.0.1366.728" timestamp="1605843353610" />
   </component>
 </project>

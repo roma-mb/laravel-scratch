@@ -25,8 +25,8 @@
 
            <div class="form-group">
                <label>Message:</label>
-               <textarea name="message" id="" cols="30" rows="10" class="form-control">{{ old('email') }}</textarea>
-               {{ $errors->first('email') }}
+               <textarea name="message" id="" cols="30" rows="10" class="form-control">{{ old('message') }}</textarea>
+               {{ $errors->first('message') }}
            </div>
 
            @csrf
