@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="Change contact layout">
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contact/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +200,7 @@
       <workItem from="1607881553944" duration="4551000" />
       <workItem from="1607970961577" duration="12156000" />
       <workItem from="1607992899371" duration="504000" />
-      <workItem from="1607995841187" duration="750000" />
+      <workItem from="1607995841187" duration="1148000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, company and customer, and persist in db.">
       <created>1606091138152</created>
@@ -240,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607293631605</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created authentication">
+      <created>1607997010345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607997010345</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,17 +250,18 @@
     <MESSAGE value="Created email, markdown" />
     <MESSAGE value="Created email, markdown, Contact form controller" />
     <MESSAGE value="Change contact layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change contact layout" />
+    <MESSAGE value="Created authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created authentication" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2" timestamp="1607908208431">
+    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2" timestamp="1607996997905">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607908208431" />
-    <state x="-1512" y="201" key="DiffContextDialog" timestamp="1607905292588">
+    <state x="-1760" y="90" width="1261" height="927" key="CommitChangelistDialog2/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607996997905" />
+    <state x="-1512" y="201" key="DiffContextDialog" timestamp="1607996904751">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1512" y="201" key="DiffContextDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607905292588" />
+    <state x="-1512" y="201" key="DiffContextDialog/0.0.1366.728/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607996904751" />
     <state x="-1180" y="274" key="FileChooserDialogImpl" timestamp="1607890708544">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
