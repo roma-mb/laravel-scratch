@@ -16,4 +16,8 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
+
+//    found 4 vulnerabilities (2 moderate, 2 high)
+//  run `npm audit fix` to fix them, or `npm audit` for details
+
 })->purpose('Display an inspiring quote');
