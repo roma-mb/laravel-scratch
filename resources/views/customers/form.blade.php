@@ -25,7 +25,7 @@
     <label for="company_id">Company:</label>
     <select name="company_id" id="company_id" class="form-control">
         @foreach($companies as $company)
-            <option value="{{ $company->id }}" {{ $company->id === $customer->company->id ? 'selected' : '' }}>
+            <option value="{{ $company->id }}" {{ ($company->id === $customer->getCompanyId()) ? 'selected' : '' }}>
                 {{ $company->name }}
             </option>
         @endforeach

@@ -18,17 +18,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'home')->name('home');
-Route::get('/login', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/sign-in', [AuthController::class, 'signIn']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'create']);
 
+//Route::get('contact', [ContactFormController::class, 'create']);
+//Route::post('contact', [ContactFormController::class, 'store']);
 
-Route::get('contact', [ContactFormController::class, 'create']);
-Route::post('contact', [ContactFormController::class, 'store']);
+// Example with name, show the full url patch in the browser
+Route::get('contact', [ContactFormController::class, 'create'])->name('contact.create');
+Route::post('contact', [ContactFormController::class, 'store'])->name('contact.store');
 
-//Route::view('about', 'about');
+Route::view('about', 'about');
+
+// Middleware example
+//Route::view('about', 'about')->middleware('midExample');
+//Route::resource('customers', CustomersController::class)->middleware('auth');
+
 //Route::view('contact', 'contact');
 //Route::get('customers', [CustomersController::class, 'index']);
 //Route::get('customers/create', [CustomersController::class, 'create']);
@@ -42,3 +50,5 @@ Route::post('contact', [ContactFormController::class, 'store']);
 //https://laravel.com/docs/8.x/controllers#resource-controllers
 Route::resource('customers', CustomersController::class);
 
+//Exemple to add auth in routes
+//Route::resource('customers', CustomersController::class)->middleware('auth');

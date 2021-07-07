@@ -4,7 +4,9 @@
 
 @section('content')
    @if(!session()->has('message'))
-       <form action="/contact" method="POST">
+{{--       <form action="/contact" method="POST">--}}
+{{--       <form action="{{ url("/contact") }}" method="POST">--}}
+       <form action="{{ route("contact.store") }}" method="POST">
            <div class="row">
                <div class="col-12">
                    <h1>Contact Us</h1>

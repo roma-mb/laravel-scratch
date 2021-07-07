@@ -49,4 +49,11 @@ class Customer extends Model
             0 => 'Inactive'
         ];
     }
+
+    public function getCompanyId()
+    {
+        return $this->exists
+            ? $this->company->id
+            : null;
+    }
 }

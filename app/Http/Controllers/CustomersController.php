@@ -7,6 +7,13 @@ use App\Models\Customer;
 
 class CustomersController extends Controller
 {
+    public function __construct()
+    {
+//        Authenticate only or except methods
+//        $this->middleware('auth')->except(['index']);
+//        $this->middleware('auth')->only(['index']);
+    }
+
     public function index()
     {
 //        https://laravel.com/docs/5.0/eloquent#query-scopes
