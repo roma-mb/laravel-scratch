@@ -7,6 +7,7 @@ use App\Mail\WelcomeNewCustomerMail;
 use App\Models\Company;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Mail;
+use Intervention\Image\Facades\Image;
 
 class CustomersController extends Controller
 {
@@ -23,7 +24,9 @@ class CustomersController extends Controller
 //        $activeCustomers   = Customer::active()->get();
 //        $inactiveCustomers = Customer::inactive()->get();
 
-        $customers = Customer::all();
+//        Example lazy loading, displayed in queries telescope when accessing the company relationship.
+//        $customers = Customer::all();
+        $customers = Customer::with('company')->paginate(15);
 
 //        return view('internals.customer', ['customer' => $customer]);
         return view('customers.index', compact('customers'));
@@ -40,6 +43,8 @@ class CustomersController extends Controller
     public function store()
     {
         $customer = Customer::create($this->validateRequest());
+
+        $this->storeImage($customer);
 
         //Create event
         event(new NewCustomerHasRegisteredEvent($customer));
@@ -66,6 +71,8 @@ class CustomersController extends Controller
         $customer->update($this->validateRequest());
         $customer->save();
 
+        $this->storeImage($customer);
+
         return redirect('/customers/' . $customer->id);
     }
 
@@ -76,13 +83,62 @@ class CustomersController extends Controller
         return redirect('customers');
     }
 
-    private function validateRequest()
+    private function validateRequest(): array
     {
+//        First example
+//        $validateData = request()->validate([
+//            'name'   => 'required|min:3',
+//            'email'  => 'required|email',
+//            'active' => 'required',
+//            'company_id' => 'required',
+//        ]);
+//
+//        if (request()->hasFile('image')) {
+//           $imageData = request()->validate([
+//               'image' => 'file|image|max:50000'
+//           ]);
+//
+//            $validateData['image'] = $imageData['image'];
+//        }
+//        return $validateData;
+
+//        Example with tap() function
+//         return tap(request()->validate([
+//             'name'   => 'required|min:3',
+//             'email'  => 'required|email',
+//             'active' => 'required',
+//             'company_id' => 'required',
+//         ]), static function() {
+//             if (request()->hasFile('image')) {
+//                 request()->validate([
+//                     'image' => 'file|image|max:50000'
+//                 ]);
+//             }
+//         });
+
         return request()->validate([
             'name'   => 'required|min:3',
             'email'  => 'required|email',
             'active' => 'required',
-            'company_id' => 'required'
+            'company_id' => 'required',
+            'image' => 'sometimes|file|image|max:50000'
         ]);
+    }
+
+    public function storeImage($customer): void
+    {
+        if(request()->hasFile('image')) {
+            $customer->update([
+               'image' => request()->image->store('uploads', 'public')
+            ]);
+
+//            http://image.intervention.io/api/fit
+//            ->fit(300,300, null, 'top-left');
+//            http://image.intervention.io/api/crop
+//            ->crop(300, 1000); crop — Crop an image
+            $image = Image::make(public_path('storage/' . $customer->image))->fit(200,200);
+            $image->save();
+
+        }
     }
 }

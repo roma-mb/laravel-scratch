@@ -11,7 +11,8 @@
 
     <div class="row">
         <div class="col-12">
-            <form action="/customers" method="POST">
+{{--            divides into multiple parts and send to server.--}}
+            <form action="/customers" method="POST" enctype="multipart/form-data">
                 @include('customers.form')
 
                 <button type="submit" class="btn btn-dark">Add</button>

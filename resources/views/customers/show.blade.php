@@ -23,4 +23,8 @@
             <p><strong>Company: </strong>{{ $customer->company->name }}</p>
         </div>
     </div>
+
+    @if($customer->image)
+        <div class="col-12"><img src="{{ asset("storage/{$customer->image}") }}" alt="" class="img-thumbnail"></div>
+    @endif
 @endsection
