@@ -38,17 +38,20 @@ Route::view('about', 'about');
 //Route::resource('customers', CustomersController::class)->middleware('auth');
 
 //Route::view('contact', 'contact');
-//Route::get('customers', [CustomersController::class, 'index']);
-//Route::get('customers/create', [CustomersController::class, 'create']);
-//Route::post('customers', [CustomersController::class, 'store']);
-//Route::get('customers/{customer}', [CustomersController::class, 'show']);
-//Route::get('customers/{customer}/edit', [CustomersController::class, 'edit']);
-//Route::patch('customers/{customer}', [CustomersController::class, 'update']);
-//Route::delete('customers/{customer}', [CustomersController::class, 'destroy']);
+Route::get('customers', [CustomersController::class, 'index']);
+Route::get('customers/create', [CustomersController::class, 'create']);
+Route::post('customers', [CustomersController::class, 'store']);
+
+//other way to authorize a request, CustomerPolicy
+Route::get('customers/{customer}', [CustomersController::class, 'show'])->middleware('can:view,customer');
+
+Route::get('customers/{customer}/edit', [CustomersController::class, 'edit']);
+Route::patch('customers/{customer}', [CustomersController::class, 'update']);
+Route::delete('customers/{customer}', [CustomersController::class, 'destroy']);
 
 //-r, --resource         Generate a resource controller class.
 //https://laravel.com/docs/8.x/controllers#resource-controllers
-Route::resource('customers', CustomersController::class);
+//Route::resource('customers', CustomersController::class);
 
 //Exemple to add auth in routes
 //Route::resource('customers', CustomersController::class)->middleware('auth');

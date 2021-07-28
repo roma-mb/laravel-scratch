@@ -14,7 +14,10 @@
     <div class="row">
         <div class="col-12">
             <h1>Customer List</h1>
-            <p><a href="customers/create">Add New Customer</a></p>
+            @can('create', \App\Models\Customer::class)
+{{--                <p><a href="{{ route('customer.create') }}">Add New Customer</a></p>--}}
+                <p><a href="customers/create">Add New Customer</a></p>
+            @endcan
         </div>
     </div>
 
@@ -22,7 +25,12 @@
         <div class="row">
             <div class="col-2">{{ $customer->id }}</div>
             <div class="col-4">
-                <a href="customers/{{ $customer->id }}">{{ $customer->name }}</a>
+                @can('view', $customer)
+                    <a href="customers/{{ $customer->id }}">{{ $customer->name }}</a>
+                @endcan
+                @cannot('view', $customer)
+                    {{ $customer->name }}
+                @endcannot
             </div>
             <div class="col-4">{{ $customer->company->name }}</div>
             <div class="col-2">{{ $customer->active }}</div>

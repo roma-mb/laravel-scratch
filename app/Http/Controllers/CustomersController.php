@@ -40,8 +40,13 @@ class CustomersController extends Controller
         return view('customers.create', compact('companies', 'customer'));
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function store()
     {
+        $this->authorize('create', Customer::class);
+
         $customer = Customer::create($this->validateRequest());
 
         $this->storeImage($customer);
@@ -76,8 +81,12 @@ class CustomersController extends Controller
         return redirect('/customers/' . $customer->id);
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function destroy(Customer $customer)
     {
+        $this->authorize('delete', $customer);
         $customer->delete();
 
         return redirect('customers');

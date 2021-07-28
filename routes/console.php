@@ -32,3 +32,16 @@ Artisan::command('contact:company-clean', function() {
            $this->warn('Deleted ' . $company->name);
        });
 })->describe('Cleans up unused companies.');
+
+Artisan::command('relationships:create', function() {
+    $user = \App\Models\User::factory()->create();
+
+//    $phone = new \App\Models\Phone();
+//    $phone->phone = '123-225-477';
+//    $ret = $user->phone()->save($phone);
+
+//    another way
+//    $user->phone()->create([
+//        'phone' => '325-444-251'
+//    ]);
+});
