@@ -45,4 +45,15 @@ class User extends Authenticatable
     {
         return $this->hasOne(Phone::class);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function roles()
+    {
+//        @Note: Example sync a role and pass additional intermediate table values, return name in pivot.
+        return $this->belongsToMany(Role::class)->withPivot('name')->withTimestamps();
+    }
 }

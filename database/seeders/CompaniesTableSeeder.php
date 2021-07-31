@@ -14,6 +14,6 @@ class CompaniesTableSeeder extends Seeder
     public function run(): void
     {
 //        php artisan db:seed CompaniesTableSeeder
-        \App\Models\Company::factory(1)->create();
+        \App\Models\Company::factory()->create();
     }
 }
