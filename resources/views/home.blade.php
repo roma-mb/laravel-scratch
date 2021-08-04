@@ -14,6 +14,8 @@
 {{--            text="Send"--}}
 {{--            type="submit"--}}
 {{--        />--}}
+
+{{--        <a class="pl-4" href="{{ $post->path() ?? '/' }}">SEO friendly Url</a>--}}
     </div>
     </div>
 @endsection

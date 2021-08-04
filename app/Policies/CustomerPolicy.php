@@ -33,7 +33,8 @@ class CustomerPolicy
     {
         $validEmails =  [
             'admin@mail.com',
-            'another@mail.com'
+            'another@mail.com',
+            'graham.reanna@example.com'
         ];
 
         return in_array($user->email, $validEmails, true)
@@ -51,7 +52,8 @@ class CustomerPolicy
     {
         $validEmails =  [
             'admin@mail.com',
-            'another@mail.com'
+            'another@mail.com',
+            'graham.reanna@example.com'
         ];
 
         return in_array($user->email, $validEmails, true)

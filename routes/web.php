@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +30,8 @@ Route::post('/register', [RegisterController::class, 'create']);
 //Route::post('contact', [ContactFormController::class, 'store']);
 
 // Example with name, show the full url patch in the browser
-Route::get('contact', [ContactFormController::class, 'create'])->name('contact.create');
-Route::post('contact', [ContactFormController::class, 'store'])->name('contact.store');
+Route::get('contact', [ContactFormController::class, 'create'])->middleware('auth')->name('contact.create');
+Route::post('contact', [ContactFormController::class, 'store'])->middleware('auth')->name('contact.store');
 
 Route::view('about', 'about');
 
@@ -38,16 +40,16 @@ Route::view('about', 'about');
 //Route::resource('customers', CustomersController::class)->middleware('auth');
 
 //Route::view('contact', 'contact');
-Route::get('customers', [CustomersController::class, 'index']);
-Route::get('customers/create', [CustomersController::class, 'create']);
-Route::post('customers', [CustomersController::class, 'store']);
+Route::get('customers', [CustomersController::class, 'index'])->middleware('auth');
+Route::get('customers/create', [CustomersController::class, 'create'])->middleware('auth');
+Route::post('customers', [CustomersController::class, 'store'])->middleware('auth');
 
 //other way to authorize a request, CustomerPolicy
 Route::get('customers/{customer}', [CustomersController::class, 'show'])->middleware('can:view,customer');
 
-Route::get('customers/{customer}/edit', [CustomersController::class, 'edit']);
-Route::patch('customers/{customer}', [CustomersController::class, 'update']);
-Route::delete('customers/{customer}', [CustomersController::class, 'destroy']);
+Route::get('customers/{customer}/edit', [CustomersController::class, 'edit'])->middleware('auth');
+Route::patch('customers/{customer}', [CustomersController::class, 'update'])->middleware('auth');
+Route::delete('customers/{customer}', [CustomersController::class, 'destroy'])->middleware('auth');
 
 //-r, --resource         Generate a resource controller class.
 //https://laravel.com/docs/8.x/controllers#resource-controllers
@@ -55,3 +57,7 @@ Route::delete('customers/{customer}', [CustomersController::class, 'destroy']);
 
 //Exemple to add auth in routes
 //Route::resource('customers', CustomersController::class)->middleware('auth');
+
+//SEO Friendly URLs
+Route::get('profiles/{profile}', [ProfilesController::class, 'show']);
+Route::get('posts/{post}-{slug}', [PostController::class, 'show']);
