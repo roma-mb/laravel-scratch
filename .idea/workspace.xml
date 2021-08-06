@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d92a37bc-d9f8-434c-b7c6-23d7c3aed14a" name="Default Changelist" comment="Eloquent relationships">
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/es/text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/pt-br/text.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/CustomerPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/CustomerPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CustomerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +166,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/es" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -183,6 +182,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\lang\es" />
       <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\auth" />
       <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\app\Http\Controllers\Auth" />
       <recent name="C:\Users\Roma_Work\Documents\_CURSOS\PHP\PHP-Laravel\laravel-scratch\resources\views\customers" />
@@ -252,6 +252,9 @@
       <workItem from="1627869357854" duration="1360000" />
       <workItem from="1627951496804" duration="3680000" />
       <workItem from="1628037016878" duration="1846000" />
+      <workItem from="1628123012482" duration="1357000" />
+      <workItem from="1628181256981" duration="272000" />
+      <workItem from="1628206322147" duration="6664000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, company and customer, and persist in db.">
       <created>1606091138152</created>

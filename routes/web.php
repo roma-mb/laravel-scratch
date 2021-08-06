@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'home')->name('home');
+Route::view('/welcome-laravel-8', 'welcome')->name('welcome-laravel');
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/sign-in', [AuthController::class, 'signIn']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -61,3 +63,9 @@ Route::delete('customers/{customer}', [CustomersController::class, 'destroy'])->
 //SEO Friendly URLs
 Route::get('profiles/{profile}', [ProfilesController::class, 'show']);
 Route::get('posts/{post}-{slug}', [PostController::class, 'show']);
+
+
+Route::get('/translate/{language}', function(string $language) {
+    App::setLocale($language);
+    return view('welcome');
+})->name('translate');
