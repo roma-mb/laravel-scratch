@@ -2,5 +2,5 @@
 
 return [
     'introduction' => 'Translation example.',
-    'welcome' => 'Welcome!'
+    'welcome' => 'Welcome!',
 ];

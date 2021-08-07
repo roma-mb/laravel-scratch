@@ -3,8 +3,6 @@
 namespace App\Providers\App\Listeners;
 
 use App\Events\NewCustomerHasRegisteredEvent;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class WelcomeNewCustomerListener
 {
@@ -15,7 +13,6 @@ class WelcomeNewCustomerListener
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -26,6 +23,5 @@ class WelcomeNewCustomerListener
      */
     public function handle(NewCustomerHasRegisteredEvent $event)
     {
-        //
     }
 }

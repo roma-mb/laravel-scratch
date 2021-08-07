@@ -3,7 +3,6 @@
 use App\Models\Company;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,52 +18,51 @@ use Illuminate\Support\Str;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 
-//    found 4 vulnerabilities (2 moderate, 2 high)
+    //    found 4 vulnerabilities (2 moderate, 2 high)
 //  run `npm audit fix` to fix them, or `npm audit` for details
-
 })->purpose('Display an inspiring quote');
 
-Artisan::command('contact:company-clean', function() {
-   Company::whereDoesntHave('customers')
+Artisan::command('contact:company-clean', function () {
+    Company::whereDoesntHave('customers')
        ->get()
-       ->each(function(Company $company) {
+       ->each(function (Company $company) {
            $company->delete();
            $this->warn('Deleted ' . $company->name);
        });
 })->describe('Cleans up unused companies.');
 
-Artisan::command('relationships:create', function() {
-//    $user = \App\Models\User::factory()->create();
+Artisan::command('relationships:create', function () {
+    //    $user = \App\Models\User::factory()->create();
 
-//    Relationships One To One (hasOne, BelongsTo)
-//    $phone = new \App\Models\Phone();
-//    $phone->phone = '123-225-477';
-//    $ret = $user->phone()->save($phone);
+    //    Relationships One To One (hasOne, BelongsTo)
+    //    $phone = new \App\Models\Phone();
+    //    $phone->phone = '123-225-477';
+    //    $ret = $user->phone()->save($phone);
 
-//    another way
-//    $user->phone()->create([
-//        'phone' => '325-444-251'
-//    ]);
+    //    another way
+    //    $user->phone()->create([
+    //        'phone' => '325-444-251'
+    //    ]);
 
-//    Relationships One To Many (hasMany, BelongsTo)
-//    $post = new \App\Models\Post([
-//        'title' => 'Title Here',
-//        'body' => 'Body Here',
-//        'user_id' => $user->id
-//    ]);
+    //    Relationships One To Many (hasMany, BelongsTo)
+    //    $post = new \App\Models\Post([
+    //        'title' => 'Title Here',
+    //        'body' => 'Body Here',
+    //        'user_id' => $user->id
+    //    ]);
 
-//    $user->posts()->create([
-//        'title' => 'Title Here',
-//        'body' => 'Body Here',
-//    ]);
+    //    $user->posts()->create([
+    //        'title' => 'Title Here',
+    //        'body' => 'Body Here',
+    //    ]);
 //
-//    $user->posts->first()->title = 'New Title';
-//    $user->posts->first()->body = 'New Body';
-//    $user->push();
+    //    $user->posts->first()->title = 'New Title';
+    //    $user->posts->first()->body = 'New Body';
+    //    $user->push();
 
-//    Relationships Many To Many
+    //    Relationships Many To Many
     $user = \App\Models\User::first();
-//    $roles = \App\Models\Role::all();
+    //    $roles = \App\Models\Role::all();
 
 //    $user->roles()->attach([2]);
 //    $user->roles()->sync([3,1,4]);

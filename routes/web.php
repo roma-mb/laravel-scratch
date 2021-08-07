@@ -64,8 +64,8 @@ Route::delete('customers/{customer}', [CustomersController::class, 'destroy'])->
 Route::get('profiles/{profile}', [ProfilesController::class, 'show']);
 Route::get('posts/{post}-{slug}', [PostController::class, 'show']);
 
-
-Route::get('/translate/{language}', function(string $language) {
+Route::get('/translate/{language}', function (string $language) {
     App::setLocale($language);
+
     return view('welcome');
 })->name('translate');

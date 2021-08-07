@@ -10,18 +10,18 @@ class Customer extends Model
 {
     use HasFactory;
 
-//    specify every field that you will allowed mass assigned
-//    protected $fillable = ['name', 'email', 'active'];
+    //    specify every field that you will allowed mass assigned
+    //    protected $fillable = ['name', 'email', 'active'];
 
-//  this is the opposite fillable
-    protected  $guarded = [];
+    //  this is the opposite fillable
+    protected $guarded = [];
 
-//    Set a default value in atribute
+    //    Set a default value in atribute
     protected $attributes = [
-        'active' => 1
+        'active' => 1,
     ];
 
-//    Access mutators  https://laravel.com/docs/8.x/eloquent-mutators
+    //    Access mutators  https://laravel.com/docs/8.x/eloquent-mutators
     public function getActiveAttribute($value)
     {
         return $this->activeOptions()[$value];
@@ -39,14 +39,14 @@ class Customer extends Model
 
     public function company()
     {
-      return $this->belongsTo(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
     public function activeOptions()
     {
         return [
             1 => 'Active',
-            0 => 'Inactive'
+            0 => 'Inactive',
         ];
     }
 

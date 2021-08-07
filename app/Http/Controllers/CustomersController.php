@@ -3,39 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Events\NewCustomerHasRegisteredEvent;
-use App\Mail\WelcomeNewCustomerMail;
 use App\Models\Company;
 use App\Models\Customer;
-use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 
 class CustomersController extends Controller
 {
     public function __construct()
     {
-//        Authenticate only or except methods
-//        $this->middleware('auth')->except(['index']);
-//        $this->middleware('auth')->only(['index']);
+        //        Authenticate only or except methods
+        $this->middleware('auth')->except(['index']);
+        $this->middleware('auth')->only(['index']);
     }
 
     public function index()
     {
-//        https://laravel.com/docs/5.0/eloquent#query-scopes
-//        $activeCustomers   = Customer::active()->get();
-//        $inactiveCustomers = Customer::inactive()->get();
+        //		        https://laravel.com/docs/5.0/eloquent#query-scopes
+        //        $activeCustomers   = Customer::active()->get();
+        //        $inactiveCustomers = Customer::inactive()->get();
 
-//        Example lazy loading, displayed in queries telescope when accessing the company relationship.
-//        $customers = Customer::all();
+        //        Example lazy loading, displayed in queries telescope when accessing the company relationship.
+        //        $customers = Customer::all();
         $customers = Customer::with('company')->paginate(15);
 
-//        return view('internals.customer', ['customer' => $customer]);
+        //        return view('internals.customer', ['customer' => $customer]);
         return view('customers.index', compact('customers'));
     }
 
     public function create()
     {
         $companies = Company::all();
-        $customer  = new Customer();
+        $customer = new Customer();
 
         return view('customers.create', compact('companies', 'customer'));
     }
@@ -54,8 +52,8 @@ class CustomersController extends Controller
         //Create event
         event(new NewCustomerHasRegisteredEvent($customer));
 
-//        return to the same route
-//        return back();
+        //        return to the same route
+        //        return back();
         return redirect('/customers');
     }
 
@@ -94,60 +92,59 @@ class CustomersController extends Controller
 
     private function validateRequest(): array
     {
-//        First example
-//        $validateData = request()->validate([
-//            'name'   => 'required|min:3',
-//            'email'  => 'required|email',
-//            'active' => 'required',
-//            'company_id' => 'required',
-//        ]);
+        //        First example
+        //        $validateData = request()->validate([
+        //            'name'   => 'required|min:3',
+        //            'email'  => 'required|email',
+        //            'active' => 'required',
+        //            'company_id' => 'required',
+        //        ]);
 //
-//        if (request()->hasFile('image')) {
-//           $imageData = request()->validate([
-//               'image' => 'file|image|max:50000'
-//           ]);
+        //        if (request()->hasFile('image')) {
+        //           $imageData = request()->validate([
+        //               'image' => 'file|image|max:50000'
+        //           ]);
 //
-//            $validateData['image'] = $imageData['image'];
-//        }
-//        return $validateData;
+        //            $validateData['image'] = $imageData['image'];
+        //        }
+        //        return $validateData;
 
-//        Example with tap() function
-//         return tap(request()->validate([
-//             'name'   => 'required|min:3',
-//             'email'  => 'required|email',
-//             'active' => 'required',
-//             'company_id' => 'required',
-//         ]), static function() {
-//             if (request()->hasFile('image')) {
-//                 request()->validate([
-//                     'image' => 'file|image|max:50000'
-//                 ]);
-//             }
-//         });
+        //        Example with tap() function
+        //         return tap(request()->validate([
+        //             'name'   => 'required|min:3',
+        //             'email'  => 'required|email',
+        //             'active' => 'required',
+        //             'company_id' => 'required',
+        //         ]), static function() {
+        //             if (request()->hasFile('image')) {
+        //                 request()->validate([
+        //                     'image' => 'file|image|max:50000'
+        //                 ]);
+        //             }
+        //         });
 
         return request()->validate([
-            'name'   => 'required|min:3',
-            'email'  => 'required|email',
+            'name' => 'required|min:3',
+            'email' => 'required|email',
             'active' => 'required',
             'company_id' => 'required',
-            'image' => 'sometimes|file|image|max:50000'
+            'image' => 'sometimes|file|image|max:50000',
         ]);
     }
 
     public function storeImage($customer): void
     {
-        if(request()->hasFile('image')) {
+        if (request()->hasFile('image')) {
             $customer->update([
-               'image' => request()->image->store('uploads', 'public')
+                'image' => request()->image->store('uploads', 'public'),
             ]);
 
-//            http://image.intervention.io/api/fit
-//            ->fit(300,300, null, 'top-left');
-//            http://image.intervention.io/api/crop
-//            ->crop(300, 1000); crop — Crop an image
-            $image = Image::make(public_path('storage/' . $customer->image))->fit(200,200);
+            //            http://image.intervention.io/api/fit
+            //            ->fit(300,300, null, 'top-left');
+            //            http://image.intervention.io/api/crop
+            //            ->crop(300, 1000); crop — Crop an image
+            $image = Image::make(public_path('storage/' . $customer->image))->fit(200, 200);
             $image->save();
-
         }
     }
 }

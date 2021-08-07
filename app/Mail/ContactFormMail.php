@@ -3,13 +3,13 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 class ContactFormMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * @var array
@@ -24,7 +24,6 @@ class ContactFormMail extends Mailable
      */
     public function __construct(array $validate)
     {
-        //
         $this->validate = $validate;
     }
 
@@ -35,7 +34,7 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-//        public var $this->validate was sent to the blade
+        //        public var $this->validate was sent to the blade
         return $this->markdown('emails.contact.contact-form');
     }
 }

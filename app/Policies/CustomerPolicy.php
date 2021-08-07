@@ -19,7 +19,6 @@ class CustomerPolicy
      */
     public function viewAny(User $user)
     {
-        //
     }
 
     /**
@@ -31,10 +30,10 @@ class CustomerPolicy
      */
     public function view(User $user, Customer $customer)
     {
-        $validEmails =  [
+        $validEmails = [
             'admin@mail.com',
             'another@mail.com',
-            'graham.reanna@example.com'
+            'graham.reanna@example.com',
         ];
 
         return in_array($user->email, $validEmails, true)
@@ -50,10 +49,10 @@ class CustomerPolicy
      */
     public function create(User $user)
     {
-        $validEmails =  [
+        $validEmails = [
             'admin@mail.com',
             'another@mail.com',
-            'graham.reanna@example.com'
+            'graham.reanna@example.com',
         ];
 
         return in_array($user->email, $validEmails, true)
@@ -70,7 +69,6 @@ class CustomerPolicy
      */
     public function update(User $user, Customer $customer)
     {
-        //
     }
 
     /**
@@ -82,9 +80,9 @@ class CustomerPolicy
      */
     public function delete(User $user, Customer $customer)
     {
-        $validEmails =  [
+        $validEmails = [
             'admin@mail.com',
-            'another@mail.com'
+            'another@mail.com',
         ];
 
         return in_array($user->email, $validEmails, true)
@@ -101,7 +99,6 @@ class CustomerPolicy
      */
     public function restore(User $user, Customer $customer)
     {
-        //
     }
 
     /**
@@ -113,6 +110,5 @@ class CustomerPolicy
      */
     public function forceDelete(User $user, Customer $customer)
     {
-        //
     }
 }

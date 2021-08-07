@@ -13,7 +13,7 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run(): void
     {
-//        php artisan db:seed CompaniesTableSeeder
+        //        php artisan db:seed CompaniesTableSeeder
         \App\Models\Company::factory()->create();
     }
 }

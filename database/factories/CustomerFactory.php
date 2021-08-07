@@ -27,7 +27,7 @@ class CustomerFactory extends Factory
             'company_id' => Company::factory()->create(),
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'active' => random_int(0,1),
+            'active' => random_int(0, 1),
         ];
     }
 }

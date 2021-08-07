@@ -13,6 +13,6 @@ class Company extends Model
 
     public function customers()
     {
-      return $this->hasMany(Customer::class);
+        return $this->hasMany(Customer::class);
     }
 }

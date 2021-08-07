@@ -12,7 +12,7 @@ class AddCompanyCommand extends Command
      *
      * @var string
      */
-//    protected $signature = 'contact:company {name} {phone=N/A}';
+    //    protected $signature = 'contact:company {name} {phone=N/A}';
     protected $signature = 'contact:company';
 
     /**
@@ -29,21 +29,21 @@ class AddCompanyCommand extends Command
      */
     public function handle(): void
     {
-//        Example with arguments
-//        $company = Company::create([
-//            'name' => $this->argument('name'),
-//            'phone' => $this->argument('phone')
-//        ]);
+        //        Example with arguments
+        //        $company = Company::create([
+        //            'name' => $this->argument('name'),
+        //            'phone' => $this->argument('phone')
+        //        ]);
 
-        // Interactively create
-        $name    = $this->ask('What is the company name?');
-        $phone   = $this->ask('What is the company\'s phone number?');
+        //        Interactively create
+        $name = $this->ask('What is the company name?');
+        $phone = $this->ask('What is the company\'s phone number?');
 
         ($this->confirm("Are you ready to insert {$name}?"))
             ? $this->createCompany($name, $phone)
             : $this->warn('No new company was added...');
 
-//        Another output example
+        //        Another output example
 //        $this->error('Error');
     }
 

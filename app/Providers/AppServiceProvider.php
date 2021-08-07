@@ -14,7 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -24,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        https://laravel.com/docs/8.x/pagination#using-bootstrap
+        //        https://laravel.com/docs/8.x/pagination#using-bootstrap
         Paginator::useBootstrap();
     }
 }
